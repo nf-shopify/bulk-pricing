@@ -1,16 +1,8 @@
-# Shopify App Template - None (app with extensions only)
+# Shopify App Template - Bulk Pricing Cart Transform Function (app with extensions only)
 
-This is a template for building a [Shopify app](https://shopify.dev/docs/apps/getting-started) that includes no app home UI. It contains the basics for building a Shopify app that uses only app extensions.
+This is a template for building a Checkout Validation Function which enforces a minimum and maximum order quantity at the variant level that includes no app home UI.
 
-**If you plan for your app to load its own page in the Shopify Admin, then you'll want to choose one of our other templates.**
-
-Whether you choose to use this template or another one, you can use your preferred package manager and the Shopify CLI with [these steps](#installing-the-template).
-
-## Benefits
-
-Shopify apps are built on a variety of Shopify tools to create a great merchant experience. The [create an app](https://shopify.dev/docs/apps/getting-started/create) tutorial in our developer documentation will guide you through creating a Shopify app.
-
-This app template does little more than install the CLI and scaffold a respository.
+It contains the basics for building a Shopify app that uses only app extensions. (https://shopify.dev/docs/apps/getting-started)
 
 ## Getting started
 
@@ -20,41 +12,44 @@ This app template does little more than install the CLI and scaffold a resposito
 1. You must [create a Shopify partner account](https://partners.shopify.com/signup) if you don’t have one.
 1. You must create a store for testing if you don't have one, either a [development store](https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store) or a [Shopify Plus sandbox store](https://help.shopify.com/en/partners/dashboard/managing-stores/plus-sandbox-store).
 
-### Installing the template
+### Clone the project
+```
+git clone https://github.com/nf-shopify/bulk-pricing.git
+```
+You can find function within /extensions/bulk-pricing-function
 
-This template can be installed using your preferred package manager:
+### Prerequisites
 
-Using yarn:
-
-```shell
-yarn create @shopify/app
+1. Creation of a json metafield on the varirant object to contain minimum quantity - namespace: "custom", key: "bulk_prices"
+```
+{
+   "bulkPrices":[
+      {
+         "quantity":1,
+         "price":"399.99"
+      },
+      {
+         "quantity":4,
+         "price":"299.99"
+      },
+      {
+         "quantity":6,
+         "price":"199.99"
+      },
+      {
+        "quantity":8,
+        "price":"99.99"
+      }
+   ]
+}
 ```
 
-Using npm:
 
-```shell
-npm init @shopify/app@latest
-```
-
-Using pnpm:
-
-```shell
-pnpm create @shopify/app@latest
-```
-
-This will clone the template and install the required dependencies.
-
-#### Local Development
+### Local Development
 
 [The Shopify CLI](https://shopify.dev/docs/apps/tools/cli) connects to an app in your Partners dashboard. It provides environment variables and runs commands in parallel..
 
 You can develop locally using your preferred package manager. Run one of the following commands from the root of your app.
-
-Using yarn:
-
-```shell
-yarn dev
-```
 
 Using npm:
 
@@ -62,13 +57,8 @@ Using npm:
 npm run dev
 ```
 
-Using pnpm:
+Open the URL generated in your console. Once you grant permission to the app, you can start to to test the function in your store.
 
-```shell
-pnpm run dev
-```
-
-Open the URL generated in your console. Once you grant permission to the app, you can start development (such as generating extensions).
 
 ## Developer resources
 
@@ -76,3 +66,6 @@ Open the URL generated in your console. Once you grant permission to the app, yo
 - [App authentication](https://shopify.dev/docs/apps/auth)
 - [Shopify CLI](https://shopify.dev/docs/apps/tools/cli)
 - [Shopify API Library documentation](https://github.com/Shopify/shopify-api-js#readme)
+
+
+
