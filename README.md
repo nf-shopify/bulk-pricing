@@ -1,9 +1,9 @@
 # Shopify App Template - Bulk Pricing Cart Transform Function (app with extensions only)
 
-This is a template for building a Checkout Validation Function which enforces a minimum and maximum order quantity at the variant level that includes no app home UI.
+This template for building a Cart Transform Function applies dynamic line item pricing based on the line item quantity added to the cart. This app does not include an app home UI.
 
 It contains the basics for building a Shopify app that uses only app extensions. (https://shopify.dev/docs/apps/getting-started)
-
+a
 ## Getting started
 
 ### Requirements
