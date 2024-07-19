@@ -20,7 +20,7 @@ You can find function within /extensions/bulk-pricing-function
 
 ### Prerequisites
 
-1. Creation of a json metafield on the varirant object to contain minimum quantity - namespace: "custom", key: "bulk_prices"
+1. Creation of a json metafield on the varirant object to contain bulk pricing - namespace: "custom", key: "bulk_prices"
 ```
 {
    "bulkPrices":[
