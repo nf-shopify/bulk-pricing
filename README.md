@@ -1,5 +1,5 @@
 # Shopify Function Template - Cart Transform Function (app with extensions only)
-## Use Case - Bulk Pricing
+### Use Case - Bulk Pricing
 
 This is a template for building a Cart Transform Function that applies dynamic line item pricing based on the line item quantity added to the cart. This app does not include an app home UI.
 
